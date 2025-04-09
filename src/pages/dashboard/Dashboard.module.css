@@ -1,0 +1,132 @@
+.main {
+    background-color: white;
+    height:100vh;
+    margin:0 auto;
+}
+
+.iframe {
+  border:none;
+}
+
+.lcd {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+
+.lcdTxt {
+    display: flex;
+    background-color:dodgerblue;
+    color:white;
+    align-items: center;
+}
+
+/* .grid {
+    padding-top:20px;
+    margin:0px 10px;
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    row-gap:20px;
+    column-gap:10px;
+    justify-content: center;
+    align-content: center;
+} */
+
+.grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: minmax(160px,1fr) [auto-fill];
+    grid-template-columns: repeat(auto-fill, minmax(126px, 1fr));
+    grid-gap: 0;
+    grid-column-gap: 6px;
+    grid-row-gap: 6px;
+    margin: 10px 10px;
+    padding-bottom: 50px;
+}
+
+.videoButton{
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'arial';
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    padding:3px;
+    /* max-width:90px;  */
+    white-space: no-wrap;
+    box-shadow: 2px 2px 4px 2px silver;
+}
+
+
+.content {
+    margin:0 auto;
+    background-color: #818589;
+    height: 100vh;
+}
+
+.rokuButton{
+        justify-content: center;
+        font-size: .8rem;
+        background: #444;
+        text-align: center;
+        cursor: pointer;
+        white-space: nowrap;
+        border: 3px solid #777;
+        color: #fff;
+        box-sizing: border-box;
+        box-shadow: 3px 3px 3px #000;
+        padding: 25px 5px 0px 5px;
+}
+
+.favPanel{
+    color:#fff;
+    display:flex;
+    font-weight: bold; 
+    cursor: pointer;
+}
+
+.pipe {
+    border-right:solid 1px white
+}
+
+.favSize{
+    /* position:relative; */
+    /* top:15px;
+    left:18px; */
+    display:flex;
+    justify-content: right;
+    align-items: right;
+    padding:0;
+    width:fit-content;
+    font-size:16px;
+}
+
+.favCtnr{
+display:flex;
+justify-content: right;
+}
+
+.selectedTile{
+    background-color: green;
+    color:white
+}
+
+.tvTxt {
+    display:flex;
+    flex:1;
+    padding:5px;
+    align-items: center;
+    justify-content: center;
+    background-color: dodgerblue;
+}
+
+.favTxt {
+    flex:1;
+    display:flex;
+    padding:5px;
+    align-items: center;
+    justify-content: center;
+    background-color: maroon;
+}
