@@ -1,19 +1,37 @@
 import { Fragment } from "react/jsx-runtime";
 import styles from "./Dashboard.module.css";
-import { tvList } from "./tvSource";
-import { useRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 
 const Dashboard = () => {
-  const [state, setState] = useState({
-    tvList,
+
+type List = {
+    id:string;
+    url:string;
+    title:string;
+    favorite:boolean
+  }
+
+  interface State {
+    tvList:List[];
+    favList:List[];
+    activeUrl:string;
+    section:string;
+    selChannelId:string
+
+  }
+  
+  const [state, setState] = useState<State>({
+    tvList:[],
     favList: [],
     activeUrl: "https://www.youtube.com/embed/YDvsBbKfLPA?si=EJ_oGpcnRTocclvx",
     section: "tvList",
     selChannelId: "1003",
   });
 
-  const videoRef = useRef(null);
+  
+
+  // const videoRef = useRef(null);
 
   function playVideo(e: any) {
     e.preventDefault();
@@ -33,9 +51,9 @@ const Dashboard = () => {
     e.stopPropagation();
     const selectedId = e.target.id;
 
-    const tempTvList = structuredClone(state).tvList;
+    const tempTvList:List[] = structuredClone(state).tvList;
 
-    const tempTvListSelected = tempTvList.find((row) => {
+    const tempTvListSelected:List|undefined = tempTvList.find((row) => {
       return row.id === selectedId;
     });
 
@@ -43,7 +61,8 @@ const Dashboard = () => {
       tempTvListSelected.favorite = !tempTvListSelected?.favorite;
 
     let favList = [];
-    setState((prevState) => {
+    setState(prevState => {
+
       if (tempTvListSelected?.favorite) {
         favList = [...prevState.favList, tempTvListSelected];
       } else {
@@ -58,11 +77,12 @@ const Dashboard = () => {
     });
   }
 
-  function handleSection(e: any) {
+  function handleSection(e: React.MouseEvent<HTMLDivElement>) {
     setState((prevState) => {
+      const target=e.target as HTMLElement;
       return {
         ...prevState,
-        section: e.target.id,
+        section: (target).id
       };
     });
   }
@@ -70,12 +90,24 @@ const Dashboard = () => {
   useEffect(() => {
     console.log("State ", state);
   });
+   
+  
 
-  function TVlist({ list }) {
+  function TVlist({list}:{list:string}) {
+    // type ListType="tvList"|"favList"|string|undefined;
+
+    
+    // const mediaList:ListType=list;
+     let arrList:List[];  
+
+     if (list==="tvList" || list==="favList"){
+       arrList=state[list]
+     }
+     else return
     return (
       <>
         <div className={grid}>
-          {state[list].map(({ id, url, title, favorite }) => {
+          {arrList?.map(({ id, url, title, favorite }:List) => {
             return (
               <Fragment key={id}>
                 <div
@@ -124,7 +156,7 @@ const Dashboard = () => {
           </div>
         </div>
         {state.section === "tvList" && <TVlist list="tvList" />}
-        {state.section === "favList" && <TVlist list="favList" />}
+        {state.section === "favList" && <TVlist list="favList"/>}
       </div>
     </div>
   );
@@ -138,7 +170,6 @@ const {
   grid,
   favPanel,
   content,
-  channel,
   favSize,
   favCtnr,
   selectedTile,
