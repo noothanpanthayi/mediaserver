@@ -51,7 +51,7 @@ export const tvList=[
     {
         id:'1011',
         title:'TRT World',
-        url:'https://www.youtube.com/live/ryykESZ73Z8?si=he-qyQgH6EK62qP7',
+        url:'https://www.youtube.com/live/NWyXUXzN7So?si=dOdD7NVFMT07afDU',
         location:'New Delhi',
         bc:'#cb2c31',
         fc:'#fff',
@@ -85,15 +85,15 @@ export const tvList=[
         fc:'#fff',
         favorite:false
     },
-    {
-        id:'1086',
-        title:'NHK World',
-        url:'https://www.youtube.com/live/f0lYkdA-Gtw?si=gZ4FRX2iFIxQ0ZDY',
-        location:'London',
-        bc:'#cb2c31',
-        fc:'#fff',
-        favorite:false
-    },
+    // {
+    //     id:'1086',
+    //     title:'NHK World',
+    //     url:'https://www.youtube.com/live/f0lYkdA-Gtw?si=gZ4FRX2iFIxQ0ZDY',
+    //     location:'London',
+    //     bc:'#cb2c31',
+    //     fc:'#fff',
+    //     favorite:false
+    // },
     
    
    
@@ -107,15 +107,15 @@ export const tvList=[
         favorite:false
     },
   
-    {
-        id:'1066',
-        title:'CBC News',
-        url:'https://www.youtube.com/live/6lMZ5cDBIX4?si=Qr2Rwvg7jtpkyCam',
-        location:'New York',
-        bc:'#cb2c31',
-        fc:'#fff',
-        favorite:false
-    },
+    // {
+    //     id:'1066',
+    //     title:'CBC News',
+    //     url:'https://www.youtube.com/live/6lMZ5cDBIX4?si=Qr2Rwvg7jtpkyCam',
+    //     location:'New York',
+    //     bc:'#cb2c31',
+    //     fc:'#fff',
+    //     favorite:false
+    // },
     
     {
         id:'1016',
@@ -222,7 +222,7 @@ export const tvList=[
     {
         id:'1050',
         title:'NDTV',
-        url:' https://www.youtube.com/live/-27JNmWEIJQ?si=k2f8o52esyTTLKaS',
+        url:'https://www.youtube.com/live/sr2Ry9JVDtU?si=x5WfALeQ4YJMfKBg',
         location:'New Delhi',
         bc:'#cb2c31',
         fc:'#fff',
@@ -287,10 +287,19 @@ export const tvList=[
         fc:'#fff',
         favorite:false
     },
+    {
+        id:'1080',
+        title:'Channels TV',
+        url:' https://www.youtube.com/live/dfB0qmJo1eM?si=eIW38IU0Du20mTcj',
+        location:'New Delhi',
+        bc:'#cb2c31',
+        fc:'#fff',
+        favorite:false
+    },
     
 
 
-    
+   
 
    
 

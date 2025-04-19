@@ -2,26 +2,24 @@ import { Fragment } from "react/jsx-runtime";
 import styles from "./Dashboard.module.css";
 import { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
-import {tvList} from './tvSource'
+import { tvList } from "./tvSource";
 
 const Dashboard = () => {
-
-type List = {
-    id:string;
-    url:string;
-    title:string;
-    favorite:boolean
-  }
+  type List = {
+    id: string;
+    url: string;
+    title: string;
+    favorite: boolean;
+  };
 
   interface State {
-    tvList:List[];
-    favList:List[];
-    activeUrl:string;
-    section:string;
-    selChannelId:string
-
+    tvList: List[];
+    favList: List[];
+    activeUrl: string;
+    section: string;
+    selChannelId: string;
   }
-  
+
   const [state, setState] = useState<State>({
     tvList,
     favList: [],
@@ -29,8 +27,6 @@ type List = {
     section: "tvList",
     selChannelId: "1003",
   });
-
-  
 
   // const videoRef = useRef(null);
 
@@ -43,7 +39,7 @@ type List = {
       return {
         ...prevState,
         activeUrl,
-        selChannelId:e.target.id
+        selChannelId: e.target.id,
       };
     });
   }
@@ -52,9 +48,9 @@ type List = {
     e.stopPropagation();
     const selectedId = e.target.id;
 
-    const tempTvList:List[] = structuredClone(state).tvList;
+    const tempTvList: List[] = structuredClone(state).tvList;
 
-    const tempTvListSelected:List|undefined = tempTvList.find((row) => {
+    const tempTvListSelected: List | undefined = tempTvList.find((row) => {
       return row.id === selectedId;
     });
 
@@ -62,8 +58,7 @@ type List = {
       tempTvListSelected.favorite = !tempTvListSelected?.favorite;
 
     let favList = [];
-    setState(prevState => {
-
+    setState((prevState) => {
       if (tempTvListSelected?.favorite) {
         favList = [...prevState.favList, tempTvListSelected];
       } else {
@@ -80,10 +75,10 @@ type List = {
 
   function handleSection(e: React.MouseEvent<HTMLDivElement>) {
     setState((prevState) => {
-      const target=e.target as HTMLElement;
+      const target = e.target as HTMLElement;
       return {
         ...prevState,
-        section: (target).id
+        section: target.id,
       };
     });
   }
@@ -91,35 +86,35 @@ type List = {
   useEffect(() => {
     console.log("State ", state);
   });
-   
-  
 
-  function TVlist({list}:{list:string}) {
+  function TVlist({ list }: { list: string }) {
     // type ListType="tvList"|"favList"|string|undefined;
 
-    
     // const mediaList:ListType=list;
-     let arrList:List[];  
+    let arrList: List[];
 
-     if (list==="tvList" || list==="favList"){
-       arrList=state[list]
-     }
-     else return
+    if (list === "tvList" || list === "favList") {
+      arrList = state[list];
+    } else return;
     return (
       <>
         <div className={grid}>
-          {arrList?.map(({ id, url, title, favorite }:List) => {
+          {arrList?.map(({ id, url, title, favorite }: List) => {
             return (
               <Fragment key={id}>
                 <div
-                  className={`${rokuButton} ${state.selChannelId===id?selectedTile:''}`}
+                  className={`${rokuButton} ${
+                    state.selChannelId === id ? selectedTile : ""
+                  }`}
                   id={id}
                   data-url={url}
                   onClick={playVideo}
                 >
                   <div>
-                    <div id={id} data-url={url}>{title}</div>
-                    <div  id={id} data-url={url} className={favCtnr}>
+                    <div id={id} data-url={url}>
+                      {title}
+                    </div>
+                    <div id={id} data-url={url} className={favCtnr}>
                       <div
                         id={id}
                         onClick={addToFavs}
@@ -139,14 +134,17 @@ type List = {
     );
   }
 
-  return (
+  return <>
+
+    <div className={intact}>
+    <div className={lcdTxt}>Watch TV</div>
+    <div className={lcd}>
+      <ReactPlayer url={state.activeUrl} controls playing={true} />
+    </div>
+  </div>
+
     <div className={main}>
-      <div className={lcdTxt}>Watch TV</div>
-      <div className={lcd}>
-        <ReactPlayer url={state.activeUrl} controls playing={true} />
-      </div>
-      <div className={content}>
-        <div></div>
+      <div className={channelSection}>
         <div className={favPanel}>
           <div id="tvList" onClick={handleSection} className={tvTxt}>
             TV Channels
@@ -157,10 +155,10 @@ type List = {
           </div>
         </div>
         {state.section === "tvList" && <TVlist list="tvList" />}
-        {state.section === "favList" && <TVlist list="favList"/>}
+        {state.section === "favList" && <TVlist list="favList" />}
       </div>
     </div>
-  );
+    </>
 };
 
 const {
@@ -170,13 +168,14 @@ const {
   lcdTxt,
   grid,
   favPanel,
-  content,
+  channelSection,
   favSize,
   favCtnr,
   selectedTile,
   pipe,
   tvTxt,
-  favTxt
+  favTxt,
+  intact,
 } = styles;
 
 export default Dashboard;

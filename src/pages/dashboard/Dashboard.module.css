@@ -60,8 +60,8 @@
 }
 
 
-.content {
-    margin:0 auto;
+.channelSection {
+    margin:350px auto;
     background-color: #818589;
     height: 100vh;
 }
@@ -129,4 +129,11 @@ justify-content: right;
     align-items: center;
     justify-content: center;
     background-color: maroon;
+}
+
+.intact {
+    position:fixed;
+    top:0;
+    width:-webkit-fill-available;
+    max-width: 1200px;
 }
