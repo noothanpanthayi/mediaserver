@@ -2,6 +2,7 @@ import { Fragment } from "react/jsx-runtime";
 import styles from "./Dashboard.module.css";
 import { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
+import {tvList} from './tvSource'
 
 const Dashboard = () => {
 
@@ -22,7 +23,7 @@ type List = {
   }
   
   const [state, setState] = useState<State>({
-    tvList:[],
+    tvList,
     favList: [],
     activeUrl: "https://www.youtube.com/embed/YDvsBbKfLPA?si=EJ_oGpcnRTocclvx",
     section: "tvList",

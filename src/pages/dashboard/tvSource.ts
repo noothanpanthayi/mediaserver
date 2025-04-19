@@ -67,15 +67,15 @@ export const tvList=[
         favorite:false
     },
     
-    {
-        id:'1007',
-        title:'Fox News',
-        url:'https://www.youtube.com/live/7lM0rKFV2q0?si=XT22vKN4hW-dp_ng',
-        location:'London',
-        bc:'#cb2c31',
-        fc:'#fff',
-        favorite:false
-    },
+    // {
+    //     id:'1007',
+    //     title:'Fox News',
+    //     url:'https://www.youtube.com/live/7lM0rKFV2q0?si=XT22vKN4hW-dp_ng',
+    //     location:'London',
+    //     bc:'#cb2c31',
+    //     fc:'#fff',
+    //     favorite:false
+    // },
     {
         id:'1003',
         title:'Arirang TV',
