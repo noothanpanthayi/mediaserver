@@ -61,7 +61,7 @@
 
 
 .channelSection {
-    margin:350px auto;
+    margin:384px auto;
     background-color: #818589;
     height: 100vh;
 }
@@ -116,7 +116,7 @@ justify-content: right;
 .tvTxt {
     display:flex;
     flex:1;
-    padding:5px;
+    padding:15px;
     align-items: center;
     justify-content: center;
     background-color: dodgerblue;
@@ -125,6 +125,7 @@ justify-content: right;
 .favTxt {
     flex:1;
     display:flex;
+    padding:15px;
     padding:5px;
     align-items: center;
     justify-content: center;
