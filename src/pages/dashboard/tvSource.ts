@@ -292,16 +292,24 @@ export const tvList=[
         fc:'#fff',
         favorite:false
     },
+    // {
+    //     id:'1080',
+    //     title:'Channels TV',
+    //     url:' https://www.youtube.com/live/dfB0qmJo1eM?si=eIW38IU0Du20mTcj',
+    //     location:'New Delhi',
+    //     bc:'#cb2c31',
+    //     fc:'#fff',
+    //     favorite:false
+    // },
     {
-        id:'1080',
-        title:'Channels TV',
-        url:' https://www.youtube.com/live/dfB0qmJo1eM?si=eIW38IU0Du20mTcj',
+        id:'2080',
+        title:'Wildlife & Nature',
+        url:'https://www.youtube.com/live/daqB3i9WYIY?si=w47WbaiRCdGof6k1',
         location:'New Delhi',
         bc:'#cb2c31',
         fc:'#fff',
         favorite:false
     },
-    
 
 
    
