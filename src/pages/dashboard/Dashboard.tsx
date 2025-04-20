@@ -19,7 +19,6 @@ const Dashboard = () => {
     section: string;
     selChannelId: string;
     selChannelFav: boolean;
-    selChannel: List;
   }
 
   const [state, setState] = useState<State>({
@@ -29,12 +28,7 @@ const Dashboard = () => {
     section: "tvList",
     selChannelId: "1001",
     selChannelFav: false,
-    selChannel: {
-      id: "",
-      url: "",
-      title: "",
-      favorite: false,
-    },
+   
   });
 
   function playVideo(e: any) {
@@ -48,7 +42,7 @@ const Dashboard = () => {
         activeUrl,
         selChannelId: e.target.id,
         selChannelFav,
-        selChannel: {},
+    
       };
     });
   }
@@ -123,14 +117,6 @@ const Dashboard = () => {
                       {title}
                     </div>
                     <div id={id} data-url={url} className={favCtnr}>
-                      {/* <div
-                        id={id}
-                        onClick={addToFavs}
-                        className={favSize}
-                        style={{ color: `${favorite ? "red" : "white"}` }}
-                      >
-                        ❤
-                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -233,7 +219,6 @@ const {
   grid,
   favPanel,
   channelSection,
-  favSize,
   favCtnr,
   selectedTile,
   pipe,
