@@ -19,7 +19,9 @@
     display: flex;
     background-color:dodgerblue;
     color:white;
-    align-items: center;
+    justify-content: space-between;
+    font-size: 26px;
+    font-weight: bold;
 }
 
 /* .grid {
@@ -61,7 +63,7 @@
 
 
 .channelSection {
-    margin:384px auto;
+    margin:460px auto;
     background-color: #818589;
     height: 100vh;
 }
@@ -77,7 +79,7 @@
         color: #fff;
         box-sizing: border-box;
         box-shadow: 3px 3px 3px #000;
-        padding: 25px 5px 0px 5px;
+        padding: 15px
 }
 
 .favPanel{
@@ -137,4 +139,9 @@ justify-content: right;
     top:0;
     width:-webkit-fill-available;
     max-width: 1200px;
+}
+
+.favIcon {
+    margin-right:10px;
+    cursor: pointer;
 }

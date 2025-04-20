@@ -147,7 +147,7 @@ export const tvList=[
     },
     {
         id:'1064',
-        title:'24 News(Mal)',
+        title:'24 News',
         url:' https://www.youtube.com/live/1wECsnGZcfc?si=y1fYY0bdIPfVtFeW',
         location:'London',
         bc:'#cb2c31',
@@ -156,7 +156,7 @@ export const tvList=[
     },
     {
         id:'1065',
-        title:'Reporter TV(Mal)',
+        title:'Reporter TV',
         url:'https://www.youtube.com/live/HGOiuQUwqEw?si=PPmL2S3Mf0o80_1t',
         location:'London',
         bc:'#cb2c31',
@@ -164,8 +164,17 @@ export const tvList=[
         favorite:false
     },
     {
+        id:'1068',
+        title:'Asianet News',
+        url:'https://www.youtube.com/live/Ko18SgceYX8?si=x-zws4mk8dEvmwC9',
+        location:'London',
+        bc:'#cb2c31',
+        fc:'#fff',
+        favorite:false
+    },
+    {
         id:'1066',
-        title:'Manorama TV(Mal)',
+        title:'Manorama TV',
         url:'https://www.youtube.com/live/tgBTspqA5nY?si=Mo6vhD8lQbzaBgMO',
         location:'London',
         bc:'#cb2c31',
@@ -174,7 +183,7 @@ export const tvList=[
     },
     {
         id:'1067',
-        title:'Mathrubhumi TV(Mal)',
+        title:'Mathrubhumi TV',
         url:'https://www.youtube.com/live/YGEgelAiUf0?si=Id3naSmXvqTX5Sg4',
         location:'London',
         bc:'#cb2c31',
@@ -182,18 +191,14 @@ export const tvList=[
         favorite:false
     },
     {
-        id:'1068',
-        title:'Asianet News (Mal)',
-        url:'https://www.youtube.com/live/Ko18SgceYX8?si=x-zws4mk8dEvmwC9',
+        id:'1070',
+        title:'Media One',
+        url:' https://www.youtube.com/live/-8d8-c0yvyU?si=72IcBfqtdDQy7wof',
         location:'London',
         bc:'#cb2c31',
         fc:'#fff',
         favorite:false
     },
-   
-   
-    
-   
     {
         id:'1005',
         title:'CNA News',
@@ -269,15 +274,15 @@ export const tvList=[
    
     
  
-    {
-        id:'1071',
-        title:'United Nations',
-        url:'https://www.youtube.com/live/wfAa1GiNdgM?si=_NEFZ9p3I6lTv4dA',
-        location:'New Delhi',
-        bc:'#cb2c31',
-        fc:'#fff',
-        favorite:false
-    },
+    // {
+    //     id:'1071',
+    //     title:'United Nations',
+    //     url:'https://www.youtube.com/live/wfAa1GiNdgM?si=_NEFZ9p3I6lTv4dA',
+    //     location:'New Delhi',
+    //     bc:'#cb2c31',
+    //     fc:'#fff',
+    //     favorite:false
+    // },
     {
         id:'1078',
         title:'Magic Club',

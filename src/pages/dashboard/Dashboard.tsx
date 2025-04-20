@@ -18,6 +18,8 @@ const Dashboard = () => {
     activeUrl: string;
     section: string;
     selChannelId: string;
+    selChannelFav: boolean;
+    selChannel: List;
   }
 
   const [state, setState] = useState<State>({
@@ -25,28 +27,35 @@ const Dashboard = () => {
     favList: [],
     activeUrl: "https://www.youtube.com/embed/YDvsBbKfLPA?si=EJ_oGpcnRTocclvx",
     section: "tvList",
-    selChannelId: "1003",
+    selChannelId: "1001",
+    selChannelFav: false,
+    selChannel: {
+      id: "",
+      url: "",
+      title: "",
+      favorite: false,
+    },
   });
-
-  // const videoRef = useRef(null);
 
   function playVideo(e: any) {
     e.preventDefault();
 
     const activeUrl = e.target.dataset.url;
-
+    let selChannelFav = state.selChannelFav ? true : false;
     setState((prevState) => {
       return {
         ...prevState,
         activeUrl,
         selChannelId: e.target.id,
+        selChannelFav,
+        selChannel: {},
       };
     });
   }
 
   function addToFavs(e: any) {
     e.stopPropagation();
-    const selectedId = e.target.id;
+    const selectedId = state.selChannelId;
 
     const tempTvList: List[] = structuredClone(state).tvList;
 
@@ -88,9 +97,6 @@ const Dashboard = () => {
   });
 
   function TVlist({ list }: { list: string }) {
-    // type ListType="tvList"|"favList"|string|undefined;
-
-    // const mediaList:ListType=list;
     let arrList: List[];
 
     if (list === "tvList" || list === "favList") {
@@ -99,7 +105,8 @@ const Dashboard = () => {
     return (
       <>
         <div className={grid}>
-          {arrList?.map(({ id, url, title, favorite }: List) => {
+          {arrList?.map((row: List) => {
+            const { id, url, title, favorite } = row;
             return (
               <Fragment key={id}>
                 <div
@@ -107,6 +114,7 @@ const Dashboard = () => {
                     state.selChannelId === id ? selectedTile : ""
                   }`}
                   id={id}
+                  data-fav={favorite}
                   data-url={url}
                   onClick={playVideo}
                 >
@@ -115,14 +123,14 @@ const Dashboard = () => {
                       {title}
                     </div>
                     <div id={id} data-url={url} className={favCtnr}>
-                      <div
+                      {/* <div
                         id={id}
                         onClick={addToFavs}
                         className={favSize}
                         style={{ color: `${favorite ? "red" : "white"}` }}
                       >
                         ❤
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -134,17 +142,51 @@ const Dashboard = () => {
     );
   }
 
-  return <>
+  function isFavorite() {
+    const tempTvList: List[] = structuredClone(state).tvList;
 
-    <div className={intact}>
-    <div className={lcdTxt}>Watch TV</div>
-    <div className={lcd}>
-      <ReactPlayer url={state.activeUrl} controls playing={true} />
-    </div>
-  </div>
+    const found=tempTvList.find(row=>{
+      return row.id===state.selChannelId
+    });
 
-    <div className={main}>
-      <div className={channelSection}>
+    console.log("### Found ", found?.favorite);
+
+    return found?.favorite;
+
+
+  }
+
+  function HeaderPanel() {
+    return (
+      <>
+        <div className={lcdTxt}>
+          <div></div>
+          <div>Watch TV</div>
+          <div
+            onClick={addToFavs}
+            className={favIcon}
+            style={{ color: `${isFavorite() ? "red" : "white"}` }}
+          >
+            ❤
+          </div>
+        </div>
+      </>
+    );
+  }
+
+  function Display() {
+    return (
+      <>
+        <div className={lcd}>
+          <ReactPlayer url={state.activeUrl} controls playing={true} />
+        </div>
+      </>
+    );
+  }
+
+  function FavTabPanel() {
+    return (
+      <>
         <div className={favPanel}>
           <div id="tvList" onClick={handleSection} className={tvTxt}>
             TV Channels
@@ -154,11 +196,33 @@ const Dashboard = () => {
             Favorites
           </div>
         </div>
-        {state.section === "tvList" && <TVlist list="tvList" />}
-        {state.section === "favList" && <TVlist list="favList" />}
+      </>
+    );
+  }
+
+  function ChannelListing() {
+    return (
+      <>
+        <div className={channelSection}>
+          {state.section === "tvList" && <TVlist list="tvList" />}
+          {state.section === "favList" && <TVlist list="favList" />}
+        </div>
+      </>
+    );
+  }
+
+  return (
+    <>
+      <div className={main}>
+        <div className={intact}>
+          <HeaderPanel />
+          <Display />
+          <FavTabPanel />
+        </div>
+        <ChannelListing />
       </div>
-    </div>
     </>
+  );
 };
 
 const {
@@ -175,6 +239,7 @@ const {
   pipe,
   tvTxt,
   favTxt,
+  favIcon,
   intact,
 } = styles;
 
