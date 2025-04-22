@@ -1,6 +1,6 @@
 import { Fragment } from "react/jsx-runtime";
 import styles from "./Dashboard.module.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import ReactPlayer from "react-player";
 import { tvList } from "./tvSource";
 
@@ -19,6 +19,7 @@ const Dashboard = () => {
     section: string;
     selChannelId: string;
     selChannelFav: boolean;
+    selChannelTitle:string;
   }
 
   const [state, setState] = useState<State>({
@@ -28,20 +29,28 @@ const Dashboard = () => {
     section: "tvList",
     selChannelId: "1001",
     selChannelFav: false,
+    selChannelTitle:'Sky News'
    
   });
 
   function playVideo(e: any) {
-    e.preventDefault();
-
-    const activeUrl = e.target.dataset.url;
-    let selChannelFav = state.selChannelFav ? true : false;
+  
     setState((prevState) => {
+      e.preventDefault();
+
+      const activeUrl = e.target.dataset.url;
+      let selChannelFav = prevState.selChannelFav ? true : false;
+      const tempTvList: List[] = structuredClone(prevState).tvList;
+
+      const tempTvListSelected: List | undefined = tempTvList.find((row) => {
+        return row.id === e.target.id;
+      });
       return {
         ...prevState,
         activeUrl,
         selChannelId: e.target.id,
         selChannelFav,
+        selChannelTitle:tempTvListSelected?.title
     
       };
     });
@@ -147,7 +156,7 @@ const Dashboard = () => {
       <>
         <div className={lcdTxt}>
           <div></div>
-          <div>Watch TV</div>
+          <div>{state.selChannelTitle}</div>
           <div
             onClick={addToFavs}
             className={favIcon}
@@ -160,7 +169,7 @@ const Dashboard = () => {
     );
   }
 
-  function Display() {
+  const Display=memo(function Display() {
     return (
       <>
         <div className={lcd}>
@@ -168,7 +177,7 @@ const Dashboard = () => {
         </div>
       </>
     );
-  }
+  })
 
   function FavTabPanel() {
     return (
