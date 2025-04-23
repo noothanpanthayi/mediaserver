@@ -33,12 +33,12 @@ const Dashboard = () => {
    
   });
 
-  function playVideo(e: any) {
+  function playVideo(e: React.MouseEvent<HTMLDivElement>) {
   
-    setState((prevState) => {
+    setState((prevState:any) => {
       e.preventDefault();
 
-      const activeUrl = e.target.dataset.url;
+      const activeUrl = e.target?.dataset.url;
       let selChannelFav = prevState.selChannelFav ? true : false;
       const tempTvList: List[] = structuredClone(prevState).tvList;
 
@@ -96,8 +96,19 @@ const Dashboard = () => {
   }
 
   useEffect(() => {
-    console.log("State ", state);
-  });
+  const storedState=localStorage.getItem("State");
+  if (storedState){
+    setState(JSON.parse(storedState))
+  }
+  else {
+    localStorage.setItem("State", JSON.stringify(state))
+  }
+  
+  },[]);
+
+  useEffect(() => {
+    localStorage.setItem("State", JSON.stringify(state))
+    },[state]);
 
   function TVlist({ list }: { list: string }) {
     let arrList: List[];
@@ -143,8 +154,6 @@ const Dashboard = () => {
     const found=tempTvList.find(row=>{
       return row.id===state.selChannelId
     });
-
-    console.log("### Found ", found?.favorite);
 
     return found?.favorite;
 
