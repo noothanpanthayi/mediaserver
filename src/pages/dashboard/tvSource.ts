@@ -47,15 +47,15 @@ export const tvList=[
         fc:'#fff',
         favorite:false
     },
-     {
-        id:'1008',
-        title:'ABC Australia',
-        url:'https://www.youtube.com/live/vOTiJkg1voo?si=wvdUynklp2dVgoX_',
-        location:'London',
-        bc:'#cb2c31',
-        fc:'#fff',
-        favorite:false
-    },
+    //  {
+    //     id:'1008',
+    //     title:'ABC Australia',
+    //     url:'https://www.youtube.com/live/vOTiJkg1voo?si=wvdUynklp2dVgoX_',
+    //     location:'London',
+    //     bc:'#cb2c31',
+    //     fc:'#fff',
+    //     favorite:false
+    // },
     
     {
         id:'1011',
@@ -102,6 +102,15 @@ export const tvList=[
         bc:'#cb2c31',
         fc:'#fff',
         favorite:false
+    },
+    {
+        id:'2090',
+        title:'Al Jazeera',
+        url:'https://www.youtube.com/live/gCNeDWCI0vo?si=tDEwD8Pl4Rk8gne6',
+        location:'Qatar',
+        bc:'#cb2c31',
+        fc:'#fff',
+        favorite:true
     },
     // {
     //     id:'1086',
@@ -155,16 +164,7 @@ export const tvList=[
         fc:'#fff',
         favorite:false
     },
-    
-      {
-        id:'1016',
-        title:'WION',
-        url:' https://www.youtube.com/live/gadjsB5BkK4?si=VnVmH8k3xZ8XR5nX',
-        location:'London',
-        bc:'#cb2c31',
-        fc:'#fff',
-        favorite:false
-    },
+   
   
     {
         id:'1004',
@@ -309,15 +309,7 @@ export const tvList=[
     //     favorite:false
     // },
     
-    {
-        id:'2090',
-        title:'The Good Life Radio',
-        url:'https://www.youtube.com/live/36YnV9STBqc?si=lhHl6sybBTYQSXy4',
-        location:'New Delhi',
-        bc:'#cb2c31',
-        fc:'#fff',
-        favorite:true
-    },
+    
     {
         id:'2080',
         title:'Wildlife & Nature',
@@ -329,12 +321,19 @@ export const tvList=[
     },
     // https://www.youtube.com/live/Xmm3Kr5P1Uw?si=hC2qhX1VCJ8jbmlN
 
+ 
+    //  
+    //   {
+    //     id:'1016',
+    //     title:'Love Nature',
+    //     url:' https://www.youtube.com/live/5CZX796YbYU?si=RzzYdWXNpgm62tSG',
+    //     location:'London',
+    //     bc:'#cb2c31',
+    //     fc:'#fff',
+    //     favorite:false
+    // },
 
-
-    
-   
-
-   
+  
 
 
     
