@@ -95,32 +95,33 @@ const Dashboard = () => {
   }
 
   useEffect(() => {
-  const storedState=localStorage.getItem("State");
  
+  const storedState:any=localStorage.getItem("State");
+  const storedStateObj= JSON.parse(storedState);
 
-  if (storedState){
-    setState({...JSON.parse(storedState), ...state})
-  }
-  else {
-    console.log("setting item")
-    localStorage.setItem("State", JSON.stringify(state))
+  if (storedStateObj?.tvList.length>0){
+    setState(prevState=>{
+      return {
+        ...prevState,
+        ...JSON.parse(storedState)
+      }
+    })
   }
   
   },[]);
 
   useEffect(() => {
     localStorage.setItem("State", JSON.stringify(state));
-    // return()=>{
-    //   localStorage.removeItem("State");
-    // }
     },[state]);
 
   function TVlist({ list }: { list: string }) {
     let arrList: List[];
-
     if (list === "tvList" || list === "favList") {
       arrList = state[list];
-    } else return;
+      console.log("arrList ", arrList)
+    }
+    else return;
+
     return (
       <>
         <div className={grid}>
