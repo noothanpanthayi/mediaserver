@@ -1,6 +1,5 @@
-import { Fragment } from "react/jsx-runtime";
 import styles from "./Dashboard.module.css";
-import { useState, useEffect, memo } from "react";
+import { useState, useEffect, memo, Fragment } from "react";
 import ReactPlayer from "react-player";
 import { tvList } from "./tvSource";
 
@@ -33,7 +32,7 @@ const Dashboard = () => {
    
   });
 
-  function playVideo(e: React.MouseEvent<HTMLDivElement>) {
+  function playVideo(e: React.MouseEventHandler<HTMLDivElement> | any) {
   
     setState((prevState:any) => {
       e.preventDefault();
@@ -97,17 +96,23 @@ const Dashboard = () => {
 
   useEffect(() => {
   const storedState=localStorage.getItem("State");
+ 
+
   if (storedState){
-    setState(JSON.parse(storedState))
+    setState({...JSON.parse(storedState), ...state})
   }
   else {
+    console.log("setting item")
     localStorage.setItem("State", JSON.stringify(state))
   }
   
   },[]);
 
   useEffect(() => {
-    localStorage.setItem("State", JSON.stringify(state))
+    localStorage.setItem("State", JSON.stringify(state));
+    // return()=>{
+    //   localStorage.removeItem("State");
+    // }
     },[state]);
 
   function TVlist({ list }: { list: string }) {

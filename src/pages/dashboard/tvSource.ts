@@ -22,7 +22,7 @@ export const tvList=[
     {
         id:'1006',
         title:'ABC News',
-        url:'https://www.youtube.com/embed/-mvUkiILTqI?si=dOR3zHQohBA31ZeH',
+        url:'https://www.youtube.com/live/Byz6YCRBHKY?si=67ZXiJ2wqMWNAYuO',
         location:'New York',
         bc:'#cb2c31',
         fc:'#fff',
@@ -47,11 +47,20 @@ export const tvList=[
         fc:'#fff',
         favorite:false
     },
+     {
+        id:'1008',
+        title:'ABC Australia',
+        url:'https://www.youtube.com/live/vOTiJkg1voo?si=wvdUynklp2dVgoX_',
+        location:'London',
+        bc:'#cb2c31',
+        fc:'#fff',
+        favorite:false
+    },
     
     {
         id:'1011',
         title:'TRT World',
-        url:'https://www.youtube.com/live/NWyXUXzN7So?si=dOdD7NVFMT07afDU',
+        url:'https://www.youtube.com/live/LJMWAzCc31Q?si=1wUAXAWHlZPEB9Lp',
         location:'New Delhi',
         bc:'#cb2c31',
         fc:'#fff',
@@ -85,6 +94,15 @@ export const tvList=[
         fc:'#fff',
         favorite:false
     },
+     {
+        id:'1005',
+        title:'CNA News',
+        url:'https://www.youtube.com/live/XWq5kBlakcQ?si=y2g81fnw9jJU_24N',
+        location:'London',
+        bc:'#cb2c31',
+        fc:'#fff',
+        favorite:false
+    },
     // {
     //     id:'1086',
     //     title:'NHK World',
@@ -97,15 +115,7 @@ export const tvList=[
     
    
    
-    {
-        id:'1008',
-        title:'ABC Australia',
-        url:'https://www.youtube.com/live/vOTiJkg1voo?si=wvdUynklp2dVgoX_',
-        location:'London',
-        bc:'#cb2c31',
-        fc:'#fff',
-        favorite:false
-    },
+   
   
     // {
     //     id:'1066',
@@ -117,7 +127,36 @@ export const tvList=[
     //     favorite:false
     // },
     
+  
+     {
+        id:'1010',
+        title:'Doordarshan',
+        url:'https://www.youtube.com/live/GAuSiFOybIM?si=Qe0ffagVvmR1OSm3',
+        location:'New Delhi',
+        bc:'#cb2c31',
+        fc:'#fff',
+        favorite:false
+    },
     {
+        id:'1054',
+        title:'Republic TV',
+        url:'https://www.youtube.com/live/MR27upZpzpQ?si=Va9Bwkly0BrFrIE6',
+        location:'London',
+        bc:'#cb2c31',
+        fc:'#fff',
+        favorite:false
+    },
+     {
+        id:'1050',
+        title:'NDTV',
+        url:'https://www.youtube.com/live/sr2Ry9JVDtU?si=x5WfALeQ4YJMfKBg',
+        location:'New Delhi',
+        bc:'#cb2c31',
+        fc:'#fff',
+        favorite:false
+    },
+    
+      {
         id:'1016',
         title:'WION',
         url:' https://www.youtube.com/live/gadjsB5BkK4?si=VnVmH8k3xZ8XR5nX',
@@ -136,10 +175,11 @@ export const tvList=[
         fc:'#fff',
         favorite:false
     },
+   
     {
-        id:'1054',
-        title:'Republic TV',
-        url:'https://www.youtube.com/live/DGtEPh-ZZ-A?si=xqOvqwkf9xCfXadK',
+        id:'1065',
+        title:'Reporter TV',
+        url:'https://www.youtube.com/live/HGOiuQUwqEw?si=PPmL2S3Mf0o80_1t',
         location:'London',
         bc:'#cb2c31',
         fc:'#fff',
@@ -154,15 +194,7 @@ export const tvList=[
         fc:'#fff',
         favorite:false
     },
-    {
-        id:'1065',
-        title:'Reporter TV',
-        url:'https://www.youtube.com/live/HGOiuQUwqEw?si=PPmL2S3Mf0o80_1t',
-        location:'London',
-        bc:'#cb2c31',
-        fc:'#fff',
-        favorite:false
-    },
+   
     {
         id:'1068',
         title:'Asianet News',
@@ -190,7 +222,7 @@ export const tvList=[
         fc:'#fff',
         favorite:false
     },
-    {
+     {
         id:'1070',
         title:'Media One',
         url:' https://www.youtube.com/live/-8d8-c0yvyU?si=72IcBfqtdDQy7wof',
@@ -199,15 +231,6 @@ export const tvList=[
         fc:'#fff',
         favorite:false
     },
-    {
-        id:'1005',
-        title:'CNA News',
-        url:'https://www.youtube.com/live/XWq5kBlakcQ?si=y2g81fnw9jJU_24N',
-        location:'London',
-        bc:'#cb2c31',
-        fc:'#fff',
-        favorite:false
-    },
    
     
    
@@ -215,33 +238,17 @@ export const tvList=[
    
     
    
-    {
-        id:'1010',
-        title:'Doordarshan',
-        url:'https://www.youtube.com/live/GAuSiFOybIM?si=Qe0ffagVvmR1OSm3',
-        location:'New Delhi',
-        bc:'#cb2c31',
-        fc:'#fff',
-        favorite:false
-    },
-    {
-        id:'1050',
-        title:'NDTV',
-        url:'https://www.youtube.com/live/sr2Ry9JVDtU?si=x5WfALeQ4YJMfKBg',
-        location:'New Delhi',
-        bc:'#cb2c31',
-        fc:'#fff',
-        favorite:false
-    },
-    {
-        id:'1013',
-        title:'India Today',
-        url:'https://www.youtube.com/live/suiuO8azFs0?si=EQkvaAnfOysMmIMu',
-        location:'New Delhi',
-        bc:'#cb2c31',
-        fc:'#fff',
-        favorite:false
-    },
+   
+   
+    // {
+    //     id:'1013',
+    //     title:'India Today',
+    //     url:'https://www.youtube.com/live/suiuO8azFs0?si=EQkvaAnfOysMmIMu',
+    //     location:'New Delhi',
+    //     bc:'#cb2c31',
+    //     fc:'#fff',
+    //     favorite:false
+    // },
 
     // {
     //     id:'1014',
@@ -301,6 +308,16 @@ export const tvList=[
     //     fc:'#fff',
     //     favorite:false
     // },
+    
+    {
+        id:'2090',
+        title:'The Good Life Radio',
+        url:'https://www.youtube.com/live/36YnV9STBqc?si=lhHl6sybBTYQSXy4',
+        location:'New Delhi',
+        bc:'#cb2c31',
+        fc:'#fff',
+        favorite:true
+    },
     {
         id:'2080',
         title:'Wildlife & Nature',
@@ -310,8 +327,11 @@ export const tvList=[
         fc:'#fff',
         favorite:false
     },
+    // https://www.youtube.com/live/Xmm3Kr5P1Uw?si=hC2qhX1VCJ8jbmlN
 
 
+
+    
    
 
    
