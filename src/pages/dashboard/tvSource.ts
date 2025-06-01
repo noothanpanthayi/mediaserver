@@ -1,4 +1,3 @@
-
 export const tvList=[
     {
         id:'1001',
@@ -10,6 +9,15 @@ export const tvList=[
         fc:'#fff',
         favorite:false
     },
+     {
+        id:'2090',
+        title:'Al Jazeera',
+        url:'https://www.youtube.com/live/gCNeDWCI0vo?si=tDEwD8Pl4Rk8gne6',
+        location:'Qatar',
+        bc:'#cb2c31',
+        fc:'#fff',
+        favorite:true
+    },
     {
         id:'1009',
         title:'Bloomberg TV',
@@ -19,15 +27,15 @@ export const tvList=[
         fc:'#fff',
         favorite:false
     },
-    {
-        id:'1006',
-        title:'ABC News',
-        url:'https://www.youtube.com/live/Byz6YCRBHKY?si=67ZXiJ2wqMWNAYuO',
-        location:'New York',
-        bc:'#cb2c31',
-        fc:'#fff',
-        favorite:false
-    },
+    // {
+    //     id:'1006',
+    //     title:'ABC News',
+    //     url:'https://www.youtube.com/live/Mw75KCPPXMU?si=hkMfxxuDoHZ3WByM',
+    //     location:'New York',
+    //     bc:'#cb2c31',
+    //     fc:'#fff',
+    //     favorite:false
+    // },
     {
         id:'1012',
         title:'France TV',
@@ -57,15 +65,15 @@ export const tvList=[
     //     favorite:false
     // },
     
-    {
-        id:'1011',
-        title:'TRT World',
-        url:'https://www.youtube.com/live/LJMWAzCc31Q?si=1wUAXAWHlZPEB9Lp',
-        location:'New Delhi',
-        bc:'#cb2c31',
-        fc:'#fff',
-        favorite:false
-    },
+    // {
+    //     id:'1011',
+    //     title:'TRT World',
+    //     url:'https://www.youtube.com/live/LJMWAzCc31Q?si=1wUAXAWHlZPEB9Lp',
+    //     location:'New Delhi',
+    //     bc:'#cb2c31',
+    //     fc:'#fff',
+    //     favorite:false
+    // },
     {
         id:'1002',
         title:'Euro News',
@@ -103,15 +111,7 @@ export const tvList=[
         fc:'#fff',
         favorite:false
     },
-    {
-        id:'2090',
-        title:'Al Jazeera',
-        url:'https://www.youtube.com/live/gCNeDWCI0vo?si=tDEwD8Pl4Rk8gne6',
-        location:'Qatar',
-        bc:'#cb2c31',
-        fc:'#fff',
-        favorite:true
-    },
+   
     // {
     //     id:'1086',
     //     title:'NHK World',
@@ -166,15 +166,15 @@ export const tvList=[
     },
    
   
-    {
-        id:'1004',
-        title:'Africa News',
-        url:' https://www.youtube.com/live/NQjabLGdP5g?si=HSpqaBtM-c1Thhmg',
-        location:'London',
-        bc:'#cb2c31',
-        fc:'#fff',
-        favorite:false
-    },
+    // {
+    //     id:'1004',
+    //     title:'Africa News',
+    //     url:' https://www.youtube.com/live/NQjabLGdP5g?si=HSpqaBtM-c1Thhmg',
+    //     location:'London',
+    //     bc:'#cb2c31',
+    //     fc:'#fff',
+    //     favorite:false
+    // },
    
     {
         id:'1065',
@@ -310,15 +310,15 @@ export const tvList=[
     // },
     
     
-    {
-        id:'2080',
-        title:'Wildlife & Nature',
-        url:'https://www.youtube.com/live/daqB3i9WYIY?si=w47WbaiRCdGof6k1',
-        location:'New Delhi',
-        bc:'#cb2c31',
-        fc:'#fff',
-        favorite:false
-    },
+    // {
+    //     id:'2080',
+    //     title:'Wildlife & Nature',
+    //     url:'https://www.youtube.com/live/daqB3i9WYIY?si=w47WbaiRCdGof6k1',
+    //     location:'New Delhi',
+    //     bc:'#cb2c31',
+    //     fc:'#fff',
+    //     favorite:false
+    // },
     // https://www.youtube.com/live/Xmm3Kr5P1Uw?si=hC2qhX1VCJ8jbmlN
 
  
@@ -333,12 +333,38 @@ export const tvList=[
     //     favorite:false
     // },
 
+   {
+        id:'3000',
+        title:'Gentle Breeze',
+        url:'https://www.youtube.com/live/zUmUu7RB-ms?si=jbN54DkvwQ3rBr3D',
+        location:'New Delhi',
+        bc:'#cb2c31',
+        fc:'#fff',
+        favorite:false
+    },
+    {
+        id:'3001',
+        title:'Nat Geo',
+        url:'https://www.youtube.com/live/r0jpy2xfgq8?si=KyOeYj4UrMA-P0vx',
+        location:'New Delhi',
+        bc:'#cb2c31',
+        fc:'#fff',
+        favorite:false
+    },
+ {
+        id:'3002',
+        title:'BBC Earth Sc.',
+        url:'https://www.youtube.com/live/LdbozD8XeJ0?si=znTWV60clumY6r4f',
+        location:'New Delhi',
+        bc:'#cb2c31',
+        fc:'#fff',
+        favorite:false
+    },
+
+
+    
+
   
-
-
-    
-
-    
 
 
     

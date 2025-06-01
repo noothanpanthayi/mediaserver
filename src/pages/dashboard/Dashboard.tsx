@@ -95,15 +95,14 @@ const Dashboard = () => {
   }
 
   useEffect(() => {
- 
-  const storedState:any=localStorage.getItem("State");
-  const storedStateObj= JSON.parse(storedState);
+  const storedFavList:any=localStorage.getItem("StateFavList");
+  const storedFavListObj= JSON.parse(storedFavList);
 
-  if (storedStateObj?.tvList.length>0){
+  if (storedFavListObj?.length>0){
     setState(prevState=>{
       return {
         ...prevState,
-        ...JSON.parse(storedState)
+        favList:storedFavListObj
       }
     })
   }
@@ -111,8 +110,8 @@ const Dashboard = () => {
   },[]);
 
   useEffect(() => {
-    localStorage.setItem("State", JSON.stringify(state));
-    },[state]);
+    localStorage.setItem("StateFavList", JSON.stringify(state.favList));
+    },[state.favList]);
 
   function TVlist({ list }: { list: string }) {
     let arrList: List[];
@@ -166,12 +165,22 @@ const Dashboard = () => {
 
   }
 
+  function clearAll(){
+   alert("to clear all")
+    localStorage.removeItem('State');
+    localStorage.removeItem('StateFavList');
+    localStorage.clear();
+    console.log("LocalStorage ", localStorage)
+
+  }
+
   function HeaderPanel() {
     return (
       <>
         <div className={lcdTxt}>
           <div></div>
           <div>{state.selChannelTitle}</div>
+          <div><div onClick={clearAll}>Reset</div></div>
           <div
             onClick={addToFavs}
             className={favIcon}
