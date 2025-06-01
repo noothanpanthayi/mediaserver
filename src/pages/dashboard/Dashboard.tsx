@@ -22,7 +22,7 @@ const Dashboard = () => {
   }
 
   function getTVList(){
-    tvList.forEach((row,index)=>{
+    tvList.forEach((row)=>{
       row.id=row.title.replace(/\s+/g, "").toLowerCase()
     })
     console.log("TV LIST id uniq ", tvList)
