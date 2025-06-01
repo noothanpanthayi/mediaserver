@@ -16,7 +16,7 @@ export const tvList=[
         location:'Qatar',
         bc:'#cb2c31',
         fc:'#fff',
-        favorite:true
+        favorite:false
     },
     {
         id:'1009',

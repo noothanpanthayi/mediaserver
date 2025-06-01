@@ -21,8 +21,16 @@ const Dashboard = () => {
     selChannelTitle:string;
   }
 
+  function getTVList(){
+    tvList.forEach((row,index)=>{
+      row.id=row.title.replace(/\s+/g, "").toLowerCase()
+    })
+    console.log("TV LIST id uniq ", tvList)
+    return tvList
+  }
+
   const [state, setState] = useState<State>({
-    tvList,
+    tvList:getTVList(),
     favList: [],
     activeUrl: "https://www.youtube.com/embed/YDvsBbKfLPA?si=EJ_oGpcnRTocclvx",
     section: "tvList",
@@ -165,14 +173,12 @@ const Dashboard = () => {
 
   }
 
-  function clearAll(){
-   alert("to clear all")
-    localStorage.removeItem('State');
-    localStorage.removeItem('StateFavList');
-    localStorage.clear();
-    console.log("LocalStorage ", localStorage)
-
-  }
+  // function clearAll(){
+  //   localStorage.removeItem('State');
+  //   localStorage.removeItem('StateFavList');
+  //   localStorage.clear();
+  //   console.log("LocalStorage ", localStorage)
+  // }
 
   function HeaderPanel() {
     return (
@@ -180,7 +186,7 @@ const Dashboard = () => {
         <div className={lcdTxt}>
           <div></div>
           <div>{state.selChannelTitle}</div>
-          <div><div onClick={clearAll}>Reset</div></div>
+          {/* <div><div onClick={clearAll}>Reset</div></div> */}
           <div
             onClick={addToFavs}
             className={favIcon}
